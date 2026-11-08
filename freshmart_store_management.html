@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreshMart | Store Management</title>
+<style>
+:root{--bg:#f4f7f5;--panel:#fff;--text:#17231d;--muted:#718078;--line:#e5ece7;--green:#176b4b;--green2:#e7f4ed;--red:#c64d4d;--amber:#a66a13;--shadow:0 8px 28px rgba(25,55,40,.06)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif}button,input,select{font:inherit}button{cursor:pointer;border:0}.app{display:grid;grid-template-columns:245px 1fr;min-height:100vh}.sidebar{background:#123d2e;color:#fff;padding:25px 17px;display:flex;flex-direction:column;gap:25px}.brand{display:flex;align-items:center;gap:12px;padding:0 9px}.brand-mark{width:40px;height:40px;border-radius:13px;background:#d8f2e3;color:#15583e;display:grid;place-items:center;font-size:22px;font-weight:800}.brand strong{display:block;font-size:18px}.brand small{color:#b7d3c4}.nav-label{font-size:11px;letter-spacing:1.4px;color:#91b5a1;padding:0 12px;margin:8px 0}.nav button{width:100%;background:transparent;color:#d5e5dc;text-align:left;padding:12px;border-radius:10px;margin:3px 0;display:flex;gap:12px;align-items:center}.nav button.active,.nav button:hover{background:#245b45;color:white}.nav .ico{width:20px;text-align:center}.side-note{margin-top:auto;background:#1d503b;border:1px solid #32684f;border-radius:13px;padding:14px;color:#d5e5dc;font-size:12px}.main{min-width:0}.topbar{height:76px;background:var(--panel);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 32px}.topbar small{color:var(--muted)}.user{display:flex;align-items:center;gap:10px;font-weight:650}.avatar{width:36px;height:36px;border-radius:50%;background:var(--green2);color:var(--green);display:grid;place-items:center}.content{padding:30px;max-width:1500px;margin:auto}.heading{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:23px}.heading h1{margin:0;font-size:26px;letter-spacing:-.6px}.heading p{margin:5px 0 0;color:var(--muted)}.btn{padding:10px 15px;border-radius:9px;background:var(--green);color:white;font-weight:650}.btn:hover{filter:brightness(.94)}.btn.light{background:var(--green2);color:var(--green)}.btn.danger{background:#fff0f0;color:var(--red)}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:22px}.stat,.panel{background:var(--panel);border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow)}.stat{padding:18px}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:13px}.stat-icon{width:34px;height:34px;border-radius:10px;background:var(--green2);display:grid;place-items:center}.stat strong{display:block;font-size:25px;margin-top:10px;letter-spacing:-.5px}.stat small{color:var(--muted)}.grid2{display:grid;grid-template-columns:1.5fr 1fr;gap:18px}.panel{padding:20px;margin-bottom:18px}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}.panel h2{font-size:16px;margin:0}.muted{color:var(--muted)}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th{text-align:left;color:var(--muted);font-size:12px;font-weight:650;padding:11px 10px;border-bottom:1px solid var(--line)}td{padding:13px 10px;border-bottom:1px solid var(--line);font-size:13px}tr:last-child td{border-bottom:0}.product{display:flex;align-items:center;gap:10px}.picon{width:35px;height:35px;border-radius:10px;background:#f0f5f1;display:grid;place-items:center;font-size:19px}.pill{display:inline-block;padding:4px 8px;border-radius:30px;font-size:11px;font-weight:700;background:var(--green2);color:var(--green)}.pill.low{background:#fff3df;color:var(--amber)}.pill.out{background:#ffeded;color:var(--red)}.actions{display:flex;gap:6px}.iconbtn{background:#f1f5f2;color:#42554a;border-radius:7px;padding:6px 9px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px}.toolbar input,.toolbar select,.field input,.field select{border:1px solid var(--line);border-radius:9px;padding:10px 12px;background:white;color:var(--text);min-width:0}.toolbar input{flex:1;min-width:180px}.hidden{display:none!important}.page{display:none}.page.active{display:block}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:12px;color:var(--muted);font-weight:650}.field input,.field select{width:100%}.modal-back{position:fixed;inset:0;background:#10251bb0;display:none;align-items:center;justify-content:center;padding:18px;z-index:10}.modal-back.show{display:flex}.modal{background:white;border-radius:16px;padding:23px;width:min(500px,100%);box-shadow:0 20px 70px #0003}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.modal-head h2{margin:0;font-size:19px}.close{background:#f0f3f1;border-radius:8px;padding:5px 10px}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}.empty{text-align:center;color:var(--muted);padding:28px}.sale-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.cart-line{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}.qty{display:flex;align-items:center;gap:8px}.qty button{width:25px;height:25px;border-radius:7px;background:#edf4ef;color:var(--green)}.total{display:flex;justify-content:space-between;padding:9px 0}.grand{font-size:20px;font-weight:800;border-top:1px solid var(--line);margin-top:8px;padding-top:15px}.notice{background:#f0f7f2;border:1px solid #d8eade;color:#315c43;padding:12px;border-radius:10px;font-size:12px;margin-top:15px}.report-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line)}@media(max-width:1000px){.cards{grid-template-columns:repeat(2,1fr)}.grid2,.sale-layout{grid-template-columns:1fr}}@media(max-width:700px){.app{grid-template-columns:1fr}.sidebar{padding:13px;gap:12px}.brand{padding:0 5px}.nav{display:flex;overflow:auto;gap:5px}.nav-label,.side-note{display:none}.nav button{white-space:nowrap;width:auto;padding:9px 11px;font-size:12px}.topbar{height:58px;padding:0 16px}.content{padding:19px 14px}.heading h1{font-size:22px}.heading{align-items:center}.cards{gap:10px}.stat{padding:13px}.stat strong{font-size:21px}.panel{padding:15px}.form-grid{grid-template-columns:1fr}.user span{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-mark">F</div><div><strong>FreshMart</strong><small>Store Management</small></div></div>
+  <div><div class="nav-label">MAIN MENU</div><nav class="nav">
+    <button class="active" data-page="dashboard"><span class="ico">▦</span>Dashboard</button>
+    <button data-page="products"><span class="ico">📦</span>Products & Stock</button>
+    <button data-page="sales"><span class="ico">🛒</span>New Sale</button>
+    <button data-page="history"><span class="ico">🧾</span>Sales History</button>
+    <button data-page="reports"><span class="ico">📊</span>Reports</button>
+  </nav></div>
+  <div class="side-note"><strong>FreshMart Grocery</strong><br>Keep your products organized and your stock up to date.</div>
+</aside>
+<main class="main">
+<header class="topbar"><div><strong id="topTitle">Dashboard</strong><br><small>Grocery store overview</small></div><div class="user"><div class="avatar">A</div><span>Store Admin</span></div></header>
+<div class="content">
+<section class="page active" id="dashboard">
+  <div class="heading"><div><h1>Good day, Admin 👋</h1><p>Here is what's happening in your store today.</p></div><button class="btn" onclick="showPage('sales')">＋ Create Sale</button></div>
+  <div class="cards">
+    <div class="stat"><div class="stat-top">Total Products <span class="stat-icon">📦</span></div><strong id="statProducts">0</strong><small>Different product types</small></div>
+    <div class="stat"><div class="stat-top">Units in Stock <span class="stat-icon">🧺</span></div><strong id="statStock">0</strong><small>Total available quantity</small></div>
+    <div class="stat"><div class="stat-top">Sales Revenue <span class="stat-icon">💰</span></div><strong id="statRevenue">Rs. 0</strong><small>Recorded completed sales</small></div>
+    <div class="stat"><div class="stat-top">Low Stock Items <span class="stat-icon">⚠️</span></div><strong id="statLow">0</strong><small>5 units or fewer</small></div>
+  </div>
+  <div class="grid2">
+    <div class="panel"><div class="panel-head"><h2>Recent Sales</h2><button class="btn light" onclick="showPage('history')">View all</button></div><div id="recentSales"></div></div>
+    <div class="panel"><div class="panel-head"><h2>Stock Alerts</h2><span class="muted">At or below 5 units</span></div><div id="stockAlerts"></div></div>
+  </div>
+  <div class="notice">Demo data is saved in this browser on this device. Use the Products & Stock page to add your own items.</div>
+</section>
+<section class="page" id="products">
+  <div class="heading"><div><h1>Products & Stock</h1><p>Add products and keep track of quantities and prices.</p></div><button class="btn" onclick="openProductModal()">＋ Add Product</button></div>
+  <div class="panel"><div class="toolbar"><input id="productSearch" placeholder="Search product name or category..." oninput="renderProducts()"><select id="categoryFilter" onchange="renderProducts()"><option value="">All categories</option><option>Grains</option><option>Beverages</option><option>Dairy</option><option>Household</option><option>Cooking</option><option>Other</option></select></div><div class="table-wrap"><table><thead><tr><th>PRODUCT</th><th>CATEGORY</th><th>PRICE</th><th>STOCK</th><th>STATUS</th><th>ACTIONS</th></tr></thead><tbody id="productRows"></tbody></table></div></div>
+</section>
+<section class="page" id="sales">
+  <div class="heading"><div><h1>New Sale</h1><p>Select grocery items and prepare the customer's bill.</p></div></div>
+  <div class="sale-layout">
+    <div class="panel"><div class="panel-head"><h2>Choose Products</h2></div><div class="toolbar"><input id="saleSearch" placeholder="Search products..." oninput="renderSaleProducts()"></div><div class="table-wrap"><table><thead><tr><th>PRODUCT</th><th>PRICE</th><th>STOCK</th><th></th></tr></thead><tbody id="saleProductRows"></tbody></table></div></div>
+    <div class="panel"><div class="panel-head"><h2>Current Bill</h2><button class="btn light" onclick="clearCart()">Clear</button></div><div id="cartItems"><div class="empty">No items added yet.</div></div><div class="total"><span class="muted">Subtotal</span><strong id="subtotal">Rs. 0</strong></div><div class="total"><span class="muted">Discount (Rs.)</span><input id="discount" type="number" min="0" value="0" style="width:100px;padding:7px;border:1px solid var(--line);border-radius:7px" oninput="renderCart()"></div><div class="total grand"><span>Total</span><span id="grandTotal">Rs. 0</span></div><button class="btn" style="width:100%;margin-top:12px" onclick="completeSale()">Complete Sale</button><p class="muted" style="font-size:11px">Stock is reduced only after the sale is completed.</p></div>
+  </div>
+</section>
+<section class="page" id="history">
+  <div class="heading"><div><h1>Sales History</h1><p>Review completed transactions.</p></div></div>
+  <div class="panel"><div class="table-wrap"><table><thead><tr><th>INVOICE</th><th>DATE & TIME</th><th>ITEMS</th><th>TOTAL</th></tr></thead><tbody id="historyRows"></tbody></table></div></div>
+</section>
+<section class="page" id="reports">
+  <div class="heading"><div><h1>Store Reports</h1><p>A quick summary of your store performance.</p></div></div>
+  <div class="cards"><div class="stat"><div class="stat-top">Total Revenue</div><strong id="reportRevenue">Rs. 0</strong></div><div class="stat"><div class="stat-top">Completed Bills</div><strong id="reportBills">0</strong></div><div class="stat"><div class="stat-top">Products Listed</div><strong id="reportProducts">0</strong></div><div class="stat"><div class="stat-top">Total Stock</div><strong id="reportStock">0</strong></div></div>
+  <div class="panel"><h2>Best-selling Products</h2><div id="bestSellers"></div></div>
+</section>
+</div></main></div>
+<div class="modal-back" id="productModal"><div class="modal"><div class="modal-head"><h2 id="modalTitle">Add Product</h2><button class="close" onclick="closeProductModal()">✕</button></div><form id="productForm"><input type="hidden" id="editId"><div class="form-grid">
+<div class="field"><label>Product name</label><input id="pName" required placeholder="e.g. Sugar"></div>
+<div class="field"><label>Category</label><select id="pCategory"><option>Grains</option><option>Beverages</option><option>Dairy</option><option>Household</option><option>Cooking</option><option>Other</option></select></div>
+<div class="field"><label>Price (Rs.)</label><input id="pPrice" type="number" min="0.01" step="0.01" required placeholder="150"></div>
+<div class="field"><label>Quantity in stock</label><input id="pQty" type="number" min="0" step="1" required placeholder="20"></div>
+</div><div class="modal-actions"><button type="button" class="btn light" onclick="closeProductModal()">Cancel</button><button class="btn" type="submit">Save Product</button></div></form></div></div>
+<script>
+const seedProducts=[
+ {id:1,name:"Sugar",category:"Grains",price:150,qty:20,icon:"🍚"},
+ {id:2,name:"Tea",category:"Beverages",price:120,qty:15,icon:"🍵"},
+ {id:3,name:"Soap",category:"Household",price:80,qty:30,icon:"🧼"},
+ {id:4,name:"Rice",category:"Grains",price:280,qty:25,icon:"🍚"},
+ {id:5,name:"Flour (Atta)",category:"Grains",price:160,qty:18,icon:"🌾"},
+ {id:6,name:"Cooking Oil",category:"Cooking",price:550,qty:12,icon:"🫗"},
+ {id:7,name:"Milk",category:"Dairy",price:220,qty:10,icon:"🥛"},
+ {id:8,name:"Lentils (Daal)",category:"Grains",price:240,qty:4,icon:"🫘"},
+ {id:9,name:"Biscuits",category:"Other",price:50,qty:40,icon:"🍪"},
+ {id:10,name:"Salt",category:"Other",price:40,qty:3,icon:"🧂"}
+];
+let products=JSON.parse(localStorage.getItem("fm_products")||"null")||seedProducts;
+let sales=JSON.parse(localStorage.getItem("fm_sales")||"[]");
+let cart=[];
+function save(){localStorage.setItem("fm_products",JSON.stringify(products));localStorage.setItem("fm_sales",JSON.stringify(sales))}
+function money(n){return "Rs. "+Number(n||0).toLocaleString("en-PK",{maximumFractionDigits:2})}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function showPage(id){document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id===id));document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===id));document.getElementById("topTitle").textContent=({dashboard:"Dashboard",products:"Products & Stock",sales:"New Sale",history:"Sales History",reports:"Reports"})[id];renderAll()}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+function status(q){return q===0?'<span class="pill out">Out of stock</span>':q<=5?'<span class="pill low">Low stock</span>':'<span class="pill">In stock</span>'}
+function renderDashboard(){
+ document.getElementById("statProducts").textContent=products.length;
+ document.getElementById("statStock").textContent=products.reduce((a,p)=>a+p.qty,0);
+ document.getElementById("statRevenue").textContent=money(sales.reduce((a,s)=>a+s.total,0));
+ document.getElementById("statLow").textContent=products.filter(p=>p.qty<=5).length;
+ const recent=sales.slice(-5).reverse();
+ document.getElementById("recentSales").innerHTML=recent.length?recent.map(s=>`<div class="report-row"><span><strong>${esc(s.invoice)}</strong><br><small class="muted">${esc(s.date)}</small></span><strong>${money(s.total)}</strong></div>`).join(""):'<div class="empty">No sales recorded yet.</div>';
+ const low=products.filter(p=>p.qty<=5);
+ document.getElementById("stockAlerts").innerHTML=low.length?low.map(p=>`<div class="report-row"><span>${p.icon||"📦"} ${esc(p.name)}</span><strong class="${p.qty===0?"":"muted"}">${p.qty} left</strong></div>`).join(""):'<div class="empty">All products have healthy stock.</div>';
+}
+function renderProducts(){
+ const q=(document.getElementById("productSearch")?.value||"").toLowerCase(),cat=document.getElementById("categoryFilter")?.value||"";
+ const list=products.filter(p=>(p.name.toLowerCase().includes(q)||p.category.toLowerCase().includes(q))&&(!cat||p.category===cat));
+ document.getElementById("productRows").innerHTML=list.length?list.map(p=>`<tr><td><div class="product"><span class="picon">${p.icon||"📦"}</span><strong>${esc(p.name)}</strong></div></td><td>${esc(p.category)}</td><td>${money(p.price)}</td><td>${p.qty}</td><td>${status(p.qty)}</td><td><div class="actions"><button class="iconbtn" onclick="editProduct(${p.id})">Edit</button><button class="iconbtn" onclick="deleteProduct(${p.id})">Delete</button></div></td></tr>`).join(""):'<tr><td colspan="6" class="empty">No products found.</td></tr>';
+}
+function openProductModal(p=null){document.getElementById("productForm").reset();document.getElementById("editId").value=p?.id||"";document.getElementById("modalTitle").textContent=p?"Edit Product":"Add Product";if(p){pName.value=p.name;pCategory.value=p.category;pPrice.value=p.price;pQty.value=p.qty}document.getElementById("productModal").classList.add("show")}
+function closeProductModal(){document.getElementById("productModal").classList.remove("show")}
+document.getElementById("productForm").addEventListener("submit",e=>{e.preventDefault();const id=Number(editId.value),data={name:pName.value.trim(),category:pCategory.value,price:Number(pPrice.value),qty:Number(pQty.value)};if(!data.name||data.price<=0||data.qty<0)return alert("Please enter valid product details.");if(id){products=products.map(p=>p.id===id?{...p,...data}:p)}else{const icons={Grains:"🌾",Beverages:"🍵",Dairy:"🥛",Household:"🧼",Cooking:"🫗",Other:"📦"};products.push({id:Date.now(),...data,icon:icons[data.category]})}save();closeProductModal();renderAll()});
+function editProduct(id){const p=products.find(x=>x.id===id);if(p)openProductModal(p)}
+function deleteProduct(id){const p=products.find(x=>x.id===id);if(p&&confirm("Delete "+p.name+" from your products?")){products=products.filter(x=>x.id!==id);save();renderAll()}}
+function renderSaleProducts(){const q=(document.getElementById("saleSearch")?.value||"").toLowerCase(),list=products.filter(p=>p.name.toLowerCase().includes(q)&&p.qty>0);document.getElementById("saleProductRows").innerHTML=list.length?list.map(p=>`<tr><td><div class="product"><span class="picon">${p.icon||"📦"}</span><strong>${esc(p.name)}</strong></div></td><td>${money(p.price)}</td><td>${p.qty}</td><td><button class="btn light" onclick="addToCart(${p.id})">Add</button></td></tr>`).join(""):'<tr><td colspan="4" class="empty">No available products found.</td></tr>'}
+function addToCart(id){const p=products.find(x=>x.id===id),line=cart.find(x=>x.id===id);if(!p||p.qty<=0)return;if(line){if(line.qty>=p.qty)return alert("Not enough stock available.");line.qty++}else cart.push({id,qty:1});renderCart()}
+function changeQty(id,delta){const line=cart.find(x=>x.id===id),p=products.find(x=>x.id===id);if(!line)return;line.qty+=delta;if(line.qty<=0)cart=cart.filter(x=>x.id!==id);else if(line.qty>p.qty){line.qty=p.qty;alert("Quantity limited to available stock.")}renderCart()}
+function clearCart(){cart=[];renderCart()}
+function renderCart(){const box=document.getElementById("cartItems");box.innerHTML=cart.length?cart.map(line=>{const p=products.find(x=>x.id===line.id);return `<div class="cart-line"><div><strong>${esc(p.name)}</strong><br><small class="muted">${money(p.price)} each</small></div><div style="text-align:right"><div class="qty"><button onclick="changeQty(${p.id},-1)">−</button><strong>${line.qty}</strong><button onclick="changeQty(${p.id},1)">+</button></div><small>${money(p.price*line.qty)}</small></div></div>`}).join(""):'<div class="empty">No items added yet.</div>';const sub=cart.reduce((a,l)=>a+products.find(p=>p.id===l.id).price*l.qty,0),disc=Math.max(0,Number(document.getElementById("discount").value)||0),total=Math.max(0,sub-disc);document.getElementById("subtotal").textContent=money(sub);document.getElementById("grandTotal").textContent=money(total)}
+function completeSale(){if(!cart.length)return alert("Add at least one product to the bill.");const sub=cart.reduce((a,l)=>a+products.find(p=>p.id===l.id).price*l.qty,0),discount=Math.max(0,Number(document.getElementById("discount").value)||0);if(discount>sub)return alert("Discount cannot be greater than subtotal.");for(const l of cart){const p=products.find(x=>x.id===l.id);if(!p||p.qty<l.qty)return alert("Stock changed. Please review your cart.")}cart.forEach(l=>{products.find(p=>p.id===l.id).qty-=l.qty});const sale={invoice:"FM-"+String(Date.now()).slice(-7),date:new Date().toLocaleString(),items:cart.map(l=>({name:products.find(p=>p.id===l.id).name,qty:l.qty,price:products.find(p=>p.id===l.id).price})),total:sub-discount,discount};sales.push(sale);cart=[];document.getElementById("discount").value=0;save();renderAll();alert("Sale completed successfully! Invoice: "+sale.invoice)}
+function renderHistory(){document.getElementById("historyRows").innerHTML=sales.length?sales.slice().reverse().map(s=>`<tr><td><strong>${esc(s.invoice)}</strong></td><td>${esc(s.date)}</td><td>${s.items.reduce((a,i)=>a+i.qty,0)} units</td><td><strong>${money(s.total)}</strong></td></tr>`).join(""):'<tr><td colspan="4" class="empty">No completed sales yet.</td></tr>'}
+function renderReports(){const revenue=sales.reduce((a,s)=>a+s.total,0);document.getElementById("reportRevenue").textContent=money(revenue);document.getElementById("reportBills").textContent=sales.length;document.getElementById("reportProducts").textContent=products.length;document.getElementById("reportStock").textContent=products.reduce((a,p)=>a+p.qty,0);const tally={};sales.forEach(s=>s.items.forEach(i=>tally[i.name]=(tally[i.name]||0)+i.qty));const best=Object.entries(tally).sort((a,b)=>b[1]-a[1]).slice(0,6);document.getElementById("bestSellers").innerHTML=best.length?best.map(([n,q])=>`<div class="report-row"><strong>${esc(n)}</strong><span>${q} units sold</span></div>`).join(""):'<div class="empty">Sales data will appear here after your first sale.</div>'}
+function renderAll(){renderDashboard();renderProducts();renderSaleProducts();renderCart();renderHistory();renderReports()}
+renderAll();
+</script>
+</body>
+</html>
